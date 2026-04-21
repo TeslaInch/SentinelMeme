@@ -1,0 +1,102 @@
+:root {
+  --bg-base: #080B0F;
+  --bg-surface: #0D1117;
+  --bg-elevated: #161B22;
+  --border: #21262D;
+  --border-active: #30363D;
+  --text-primary: #E6EDF3;
+  --text-secondary: #8B949E;
+  --text-muted: #484F58;
+  --accent: #F0B90B;
+  --accent-dim: #2D2500;
+  --danger: #F85149;
+  --danger-dim: #2D0F0E;
+  --warning: #E3B341;
+  --warning-dim: #2D1F00;
+  --safe: #3FB950;
+  --safe-dim: #0D2410;
+  --scan-line: rgba(240,185,11,0.03);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-syne), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Animated scan-line overlay on the whole page — subtle, not distracting */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    var(--scan-line) 0px,
+    var(--scan-line) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Pulsing animation for live monitor dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Fade-in for scan results */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scan progress animation */
+@keyframes scanProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* Number counter flash */
+@keyframes countFlash {
+  0% { color: var(--accent); }
+  100% { color: var(--text-secondary); }
+}
+
+/* Red pulse for CRITICAL verdict */
+@keyframes redPulse {
+  0%, 100% { box-shadow: 0 0 12px rgba(248,81,73,0.25); }
+  50% { box-shadow: 0 0 20px rgba(248,81,73,0.5); }
+}
+
+/* Shimmer animation for loading button */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-active);
+  border-radius: 2px;
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+input:focus {
+  outline: none;
+}

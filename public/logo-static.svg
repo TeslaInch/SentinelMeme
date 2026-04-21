@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <!-- Dark background circle -->
+  <circle cx="250" cy="250" r="250" fill="#080B0F"/>
+  
+  <!-- Hexagon shield -->
+  <polygon 
+    points="250,120 360,185 360,315 250,380 140,315 140,185" 
+    fill="none" 
+    stroke="#F0B90B" 
+    stroke-width="3"
+  />
+  
+  <!-- Static scan line -->
+  <line 
+    x1="160" 
+    y1="180" 
+    x2="340" 
+    y2="180" 
+    stroke="#F0B90B" 
+    stroke-width="2" 
+    stroke-opacity="0.6"
+  />
+  
+  <!-- Eye shape in center -->
+  <path 
+    d="M250 220 
+       Q270 235 250 250 
+       Q230 235 250 220 
+       M250 235 
+       A5 5 0 1 1 250 245 
+       A5 5 0 1 1 250 235" 
+    fill="#F0B90B"
+  />
+  
+  <!-- Pupil dot -->
+  <circle cx="250" cy="235" r="4" fill="#080B0F"/>
+</svg>
