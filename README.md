@@ -5,7 +5,7 @@
 
 > **Built for the Four.Meme AI Sprint 2026** 
 
-> Live Demo: [your-vercel-url]  
+> Live Demo: https://sentinelmeme.netlify.app/ 
 > Telegram Alerts: [t.me/SentinelMemeAlerts](https://t.me/SentinelMemeAlerts)
 
 
